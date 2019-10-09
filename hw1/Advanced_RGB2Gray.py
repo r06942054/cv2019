@@ -70,15 +70,15 @@ def main():
     
     img_name = os.path.basename(args.input_path).split('.')[0]
     
-    print("Top 1 weights: ", index[0])
+    print("Top 1 weights: ", weight_table[index[0]])
     guidance = JBF.rgb2gray(img, weight_table[index[0]]).astype(np.uint8)
     cv2.imwrite(img_name + "_y1.png", guidance)
     
-    print("Top 2 weights: ", index[1])
+    print("Top 2 weights: ", weight_table[index[1]])
     guidance = JBF.rgb2gray(img, weight_table[index[1]]).astype(np.uint8)
     cv2.imwrite(img_name + "_y2.png", guidance)
     
-    print("Top 3 weights: ", index[2])
+    print("Top 3 weights: ", weight_table[index[2]])
     guidance = JBF.rgb2gray(img, weight_table[index[2]]).astype(np.uint8)
     cv2.imwrite(img_name + "_y3.png", guidance)
     
